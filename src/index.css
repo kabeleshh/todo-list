@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components{
+    .btn{
+        @apply border-2 rounded-xl p-2 hover:shadow-lg active:bg-gray-200 focus-within:ring-2 focus-within:ring-slate-900;
+    }
+}
