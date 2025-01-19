@@ -45,7 +45,7 @@ function App() {
     }
     else{
       try{
-        const req = await axios.post(`http://localhost:8080/api/new`,data);
+        const req = await axios.post(`https://todo-production-app-76b8331c1a2a.herokuapp.com/api/new`,data);
         toast.success(`Task added successfully`);
       }
       catch(err){
