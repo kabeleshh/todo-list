@@ -8,7 +8,7 @@ export default function TodoView(){
     const[display,setList] = useState();
 
     useEffect(()=>{
-        fetch(`https://todo-production-app-76b8331c1a2a.herokuapp.com/api/get`)
+        fetch(`https://todo-list-application-941e508b6feb.herokuapp.com/api/get`)
         .then((res)=>res.json())
         .then((res)=>setList(res))
         .catch((err)=>console.log(err));
@@ -16,7 +16,7 @@ export default function TodoView(){
 
     const del = async(id) => {
          try{
-            const delRes = await axios.delete(`https://todo-production-app-76b8331c1a2a.herokuapp.com/api/del/${id}`)
+            const delRes = await axios.delete(`https://todo-list-application-941e508b6feb.herokuapp.com/api/del/${id}`)
             toast.error("Task removed successfully");
          }
          catch(err){
@@ -29,7 +29,7 @@ export default function TodoView(){
         const update = {...item,completed:true};
         if(update!==null){
             try{
-                const res = await axios.patch(`https://todo-production-app-76b8331c1a2a.herokuapp.com/api/completed/${update.id}`,update);
+                const res = await axios.patch(`https://todo-list-application-941e508b6feb.herokuapp.com/api/completed/${update.id}`,update);
                 toast.info(`Task Completed successfully`);
             }
             catch(err){
